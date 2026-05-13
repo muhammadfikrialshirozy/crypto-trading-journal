@@ -1,7 +1,6 @@
 /**
  * Utility functions for computing trading metrics.
  */
-
 export interface Trade {
   id?: string
   user_id?: string
@@ -18,6 +17,7 @@ export interface Trade {
   result?: string | null
   created_at?: string
   updated_at?: string
+}
 }
 }
 
