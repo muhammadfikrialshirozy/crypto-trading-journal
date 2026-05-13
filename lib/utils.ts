@@ -18,8 +18,7 @@ export interface Trade {
   created_at?: string
   updated_at?: string
 }
-}
-}
+
 
 /**
  * Calculates the risk–reward ratio (RR) for a trade.
