@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar'
 import StatsCard from '@/components/StatsCard'
 import BarChart from '@/components/BarChart'
 import CompoundingChart from '@/components/CompoundingChart'
-import { Trade, calculateProfitPercent, calculateRR } from '@/lib/utils'
+import { calculateProfitPercent } from '@/lib/utils'
 
 export default async function AnalyticsPage() {
   const supabase = createServerClient()
@@ -18,7 +18,7 @@ export default async function AnalyticsPage() {
     .from('trades')
     .select('*')
     .order('created_at', { ascending: true })
-  const trades = (tradesData as Trade[]) ?? []
+  const trades = (tradesData as AnalyticsTrade[]) ?? []
   // Win rate per pair
   const pairStats: Record<string, { wins: number; total: number }> = {}
   // Performance by day of week (0=Sun..6=Sat)
@@ -106,4 +106,15 @@ export default async function AnalyticsPage() {
       </div>
     </div>
   )
+}type AnalyticsTrade = {
+  id?: string
+  pair: string
+  entry_price: number
+  exit_price: number | null
+  stop_loss: number
+  take_profit: number
+  position_size: number
+  fee?: number | null
+  tax?: number | null
+  created_at?: string
 }
