@@ -4,13 +4,21 @@
 
 export interface Trade {
   id?: string
+  user_id?: string
+  pair: string
   entry_price: number
-  exit_price: number
+  exit_price: number | null
   stop_loss: number
   take_profit: number
   position_size: number
-  fee?: number
-  tax?: number
+  fee?: number | null
+  tax?: number | null
+  screenshot_url?: string | null
+  notes?: string | null
+  result?: string | null
+  created_at?: string
+  updated_at?: string
+}
 }
 
 /**
