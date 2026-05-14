@@ -20,8 +20,8 @@ export function createServerClient() {
             })
           } catch {
             // Server Components cannot write cookies.
-            // Ignore this here. Auth cookie refresh should be handled
-            // by Route Handlers / Middleware later if needed.
+            // Ignore cookie writes here. Auth cookie refresh should be
+            // handled by Route Handlers or Middleware if needed.
           }
         },
       },
