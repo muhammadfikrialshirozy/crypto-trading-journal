@@ -12,7 +12,7 @@ const navItems: NavItem[] = [
   { href: '/dashboard', label: 'Dashboard' },
   { href: '/trading-journal', label: 'Trading Journal' },
   { href: '/analytics', label: 'Analytics' },
-  { href: '/risk-management', label: 'Risk Management' },
+  { href: '/risk-management', label: 'Spot Planner' },
   { href: '/settings', label: 'Settings' },
 ]
 
